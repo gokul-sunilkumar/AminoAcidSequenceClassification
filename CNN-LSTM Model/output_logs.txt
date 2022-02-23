@@ -1,0 +1,361 @@
+(dm_env) C:\Users\HP\Desktop\GS\data_mining>python ste2.py
+"test" has 126171 sequences                                             
+"cv" has 126171 sequences                                   
+"train" has 1086741 sequences      
+
+False 
+False                                         
+False
+
+family_id	sequence_name	family_accession	aligned_sequence	sequence
+GMC_oxred_C	A4WZS5_RHOS5/416-539	PF05199.13	PHPE.SRIRLST.RRDAHGMP.....IP.RIESRLGP............	PHPESRIRLSTRRDAHGMPIPRIESRLGPDAFARLRFMARTCRAIL...
+DUF2887	K9QI92_9NOSO/3-203	PF11103.8	RDSIYYQIFKRFPALIFEL..VD.NRPPQAQNYRFESVEVKETAFR...	RDSIYYQIFKRFPALIFELVDNRPPQAQNYRFESVEVKETAFRIDG...
+zf-IS66	Q92LC9_RHIME/32-75	PF13005.7	.TCCPDCGG.E..LRLVGED.AS....EILDMI.AAQMKVIEVARL...	TCCPDCGGELRLVGEDASEILDMIAAQMKVIEVARLKKSCRCCE
+Asp_decarbox	X2GQZ4_9BACI/1-115	PF02261.16	MLRMMMNSKIHRATVTEADLNYVGSITIDEDILDAVGMLPNEKVHI...	MLRMMMNSKIHRATVTEADLNYVGSITIDEDILDAVGMLPNEKVHI...
+Filamin	A7SQM3_NEMVE/342-439	PF00630.19	TACPKQ.CTA....RGLG.............LK.AAPVT.QPT..R...	TACPKQCTARGLGLKAAPVTQPTRFVVILNDCHGQPLGRSEGELEV... 
+
+
+df_train:  (500000, 5)                       
+df_cv  :  (25000, 5)                          
+df_test :  (25000, 5)                        
+Unique classes in train set : 17180
+Unique classes in cv set : 7818
+Unique classes in test set : 7859  
+Unique classes in all the three datasets : 17181                                                                                                                           
+Common classes in train cv and test data : 5832                                                                                                                                 
+Shape of our train data :  (395813, 6)         
+Shape of our cv data :  (22240, 6)           
+Shape of our test data :  (22218, 6)          
+unique_indexes:  21
+
+
+PF13649.6     1672
+PF00560.33     899
+PF13508.7      829
+PF06580.13     744
+PF02397.16     739
+              ... 
+PF04174.13       1
+PF01445.17       1
+PF16584.5        1
+PF10858.8        1
+PF10480.9        1
+Name: family_accession, Length: 17180, dtype: int64
+
+PF13649.6     107
+PF13508.7      46
+PF00560.33     45
+PF02397.16     39
+PF00684.19     39
+             ... 
+PF08429.11      1
+PF05557.13      1
+PF14487.6       1
+PF03887.14      1
+PF02796.15      1
+Name: family_accession, Length: 7818, dtype: int64
+
+PF13508.7     107
+PF18523.1     107
+PF00045.19    107
+PF10824.8     107
+PF07408.11    107
+             ... 
+PF08774.11    107
+PF07684.12    107
+PF06827.14    107
+PF01903.17    107
+PF13649.6     107
+Name: family_accession, Length: 7818, dtype: int64
+
+PF13649.6     157
+PF00684.19     50
+PF00677.17     50
+PF06580.13     50
+PF01035.20     50
+             ... 
+PF14487.6      50
+PF03887.14     50
+PF02796.15     50
+PF13616.6      50
+PF01866.17     50
+Name: family_accession, Length: 7818, dtype: int64
+
+
+CPU times: user 990 ms, sys: 1.96 s, total: 2.95 s
+Wall time: 2.97 s
+CPU times: user 63.8 ms, sys: 223 ms, total: 287 ms
+Wall time: 286 ms
+CPU times: user 69.1 ms, sys: 224 ms, total: 293 ms
+Wall time: 293 ms
+calculating X_train ...                                                                                              
+100%|████████████████████████████████████████████████████████████████████████| 395813/395813 [8:09:49<00:00, 50.82it/s] 
+calculating X_cv ...                                                                                                 
+100%|████████████████████████████████████████████████████████████████████████████| 22240/22240 [1:07:13<00:00, 51.28it/s]   
+calculating X_test ...                                                                                               
+100%|████████████████████████████████████████████████████████████████████████████| 22218/22218 [1:07:12<00:00, 51.37it/s]             
+X_train:  (395813, 100, 21)                                                                                          
+[[[0. 0. 0. ... 0. 0. 0.]                                                                                              
+[0. 0. 0. ... 0. 0. 0.]                                                                                              
+[1. 0. 0. ... 0. 0. 0.]
+...                                                                                                                  
+[1. 0. 0. ... 0. 0. 0.]                                                                                              
+[0. 0. 0. ... 0. 0. 0.]                                                                                              
+[0. 0. 0. ... 0. 0. 0.]]  
+                                                                                                                                                                                                               
+[[0. 0. 0. ... 0. 0. 0.]                                                                                              
+[0. 0. 0. ... 0. 0. 0.]                                                                                              
+[0. 0. 0. ... 0. 0. 0.]                                                                                             
+...                                                                                                                  
+[0. 1. 0. ... 0. 0. 0.]                                                                                       
+[0. 0. 0. ... 0. 0. 0.]                                                                             
+[1. 0. 0. ... 0. 0. 0.]]
+
+[[0. 0. 0. ... 0. 0. 0.]                                                                                              
+[0. 0. 0. ... 1. 0. 0.]                                                                                              
+[0. 0. 0. ... 1. 0. 0.]                                                                                              
+...                                                                                                                  
+[1. 0. 0. ... 0. 0. 0.]                                                                                              
+[1. 0. 0. ... 0. 0. 0.]                                                                                              
+[1. 0. 0. ... 0. 0. 0.]]   
+                                                                                                                                                                                                              
+[[0. 0. 0. ... 0. 0. 0.]                                                                                              
+[0. 0. 0. ... 0. 0. 0.]                                                                                              
+[0. 1. 0. ... 0. 0. 0.]                                                                                              
+...                                                                                                                  
+[0. 0. 0. ... 0. 0. 0.]                                                                                              
+[0. 0. 0. ... 0. 0. 0.]                                                                                              
+[0. 0. 0. ... 0. 0.0.]]                                                                                                                                                                        
+(None, 100, 21)    
+2022-01-03 13:40:57.988267: I tensorflow/core/platform/cpu_feature_guard.cc:151] 
+This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX AVX2
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.                          
+2022-01-03 13:40:58.626732: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1525] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 14787 MB memory:  -> device: 0, name: Quadro P5000, pci bus id: 0000:21:00.0, compute capability: 6.1 
+Model: "model"
+__________________________________________________________________________________________________                    
+Layer (type)                   Output Shape         Param #     Connected to                                       
+==================================================================================================
+ Layer (type)                   Output Shape         Param #     Connected to                     
+==================================================================================================
+input_1 (InputLayer)           [(None, 100, 21)]    0           []                               
+                                                                                                
+conv1d_1 (Conv1D)              (None, 100, 32)      704         ['input_1[0][0]']                
+                                                                                                
+max_pooling1d_6 (MaxPooling1D)  (None, 50, 32)      0           ['conv1d_1[0][0]']               
+                                                                                                
+batch_normalization_1 (BatchNo  (None, 50, 32)      128         ['max_pooling1d_6[0][0]']        
+rmalization)                                                                                     
+                                                                                                
+activation_1 (Activation)      (None, 50, 32)       0           ['batch_normalization_1[0][0]']  
+                                                                                                
+batch_normalization_2 (BatchNo  (None, 50, 32)      128         ['activation_1[0][0]']           
+rmalization)                                                                                     
+                                                                                                
+activation_2 (Activation)      (None, 50, 32)       0           ['batch_normalization_2[0][0]']  
+                                                                                                
+conv1d_3 (Conv1D)              (None, 50, 128)      4224        ['activation_2[0][0]']           
+                                                                                                
+batch_normalization_3 (BatchNo  (None, 50, 128)     512         ['conv1d_3[0][0]']               
+rmalization)                                                                                     
+                                                                                                
+activation_3 (Activation)      (None, 50, 128)      0           ['batch_normalization_3[0][0]']  
+                                                                                                
+conv1d_4 (Conv1D)              (None, 50, 128)      16512       ['activation_3[0][0]']           
+                                                                                                
+conv1d_2 (Conv1D)              (None, 50, 128)      4224        ['activation_1[0][0]']           
+                                                                                                
+d3 (Dropout)                   (None, 50, 128)      0           ['conv1d_4[0][0]']               
+                                                                                                
+d7 (Dropout)                   (None, 50, 128)      0           ['conv1d_2[0][0]']               
+                                                                                                
+max_pooling1d_7 (MaxPooling1D)  (None, 25, 128)     0           ['d3[0][0]']                     
+                                                                                                
+max_pooling1d_8 (MaxPooling1D)  (None, 25, 128)     0           ['d7[0][0]']                     
+                                                                                                
+add_2 (Add)                    (None, 25, 128)      0           ['max_pooling1d_7[0][0]',        
+                                                                'max_pooling1d_8[0][0]']        
+                                                                                                
+activation_4 (Activation)      (None, 25, 128)      0           ['add_2[0][0]']                  
+                                                                                                
+dropout_2 (Dropout)            (None, 25, 128)      0           ['activation_4[0][0]']           
+                                                                                                
+batch_normalization_4 (BatchNo  (None, 25, 128)     512         ['dropout_2[0][0]']              
+rmalization)                                                                                     
+                                                                                                
+activation_5 (Activation)      (None, 25, 128)      0           ['batch_normalization_4[0][0]']  
+                                                                                                
+dropout_1 (Dropout)            (None, 25, 128)      0           ['activation_5[0][0]']           
+                                                                                                
+lstm_1 (LSTM)                  (None, 256)          394240      ['dropout_1[0][0]']              
+                                                                                                
+flatten_1 (Flatten)            (None, 256)          0           ['lstm_1[0][0]']                 
+                                                                                                
+fc5832 (Dense)                 (None, 5832)         1498824     ['flatten_1[0][0]']              
+                                                                                                
+activation_6 (Activation)      (None, 5832)         0           ['fc5832[0][0]']                 
+                                                                                                  
+==================================================================================================
+Total params: 1,920,008
+Trainable params: 1,919,368
+Non-trainable params: 640
+__________________________________________________________________________________________________
+
+2022-01-03 13:41:03.738776: W tensorflow/core/framework/cpu_allocator_impl.cc:82] Allocation of 9233525664 exceeds 10% of free system memory.
+                                                                                          
+Epoch 1/50                                                                                                           
+2022-01-03 13:41:07.770377: I tensorflow/stream_executor/cuda/cuda_dnn.cc:366] Loaded cuDNN version 8100             
+1547/1547 [==============================] - 42s 25ms/step - loss: 3.2222 - accuracy: 0.5456 - val_loss: 1.5441 - val_accuracy: 0.8468
+Epoch 2/50                                                                                                           
+1547/1547 [==============================] - 38s 25ms/step - loss: 0.9284 - accuracy: 0.8300 - val_loss: 0.6729 - val_accuracy: 0.9008                                              
+Epoch 3/50                                                                                                           
+1547/1547 [==============================] - 38s 25ms/step - loss: 0.5524 - accuracy: 0.8894 - val_loss: 0.5044 - val_accuracy: 0.9170                                 
+Epoch 4/50                                                                                                           
+1547/1547 [==============================] - 38s 25ms/step - loss: 0.3835 - accuracy: 0.9170 - val_loss: 0.4397 - val_accuracy: 0.9246                                               
+Epoch 5/50                                                                                                           
+1547/1547 [==============================] - 38s 25ms/step - loss: 0.2864 - accuracy: 0.9341 - val_loss: 0.4133 - val_accuracy: 0.9288                                                                
+Epoch 6/50                                                                                                           
+1547/1547 [==============================] - 38s 25ms/step - loss: 0.2300 - accuracy: 0.9440 - val_loss: 0.3993 - val_accuracy: 0.9333                                   
+Epoch 7/50                                                                                                           
+1547/1547 [==============================] - 38s 25ms/step - loss: 0.1875 - accuracy: 0.9528 - val_loss: 0.3879 - val_accuracy: 0.9345                                                     
+Epoch 8/50                                                                                                           
+1547/1547 [==============================] - 38s 25ms/step - loss: 0.1609 - accuracy: 0.9581 - val_loss: 0.3842 - val_accuracy: 0.9366                                                    
+Epoch 9/50                                                                                                           
+1547/1547 [==============================] - 38s 25ms/step - loss: 0.1435 - accuracy: 0.9620 - val_loss: 0.3853 - val_accuracy: 0.9360                                                   
+Epoch 10/50                                                                                                          
+1547/1547 [==============================] - 38s 25ms/step - loss: 0.1289 - accuracy: 0.9654 - val_loss: 0.3810 - val_accuracy: 0.9373                                                       
+Epoch 11/50                                                                                                          
+1547/1547 [==============================] - 38s 25ms/step - loss: 0.1165 - accuracy: 0.9682 - val_loss: 0.3835 - val_accuracy: 0.9373                                                      
+Epoch 12/50                                                                                                          
+1547/1547 [==============================] - 38s 25ms/step - loss: 0.1077 - accuracy: 0.9701 - val_loss: 0.3775 - val_accuracy: 0.9389                                                     
+Epoch 13/50                                                                                                          
+1547/1547 [==============================] - 38s 25ms/step - loss: 0.0994 - accuracy: 0.9723 - val_loss: 0.3782 - val_accuracy: 0.9388                                                     
+Epoch 14/50                                                                                                          
+1547/1547 [==============================] - 38s 25ms/step - loss: 0.0950 - accuracy: 0.9733 - val_loss: 0.3694 - val_accuracy: 0.9404                                                  
+Epoch 15/50                                                                                                          
+1547/1547 [==============================] - 38s 25ms/step - loss: 0.0872 - accuracy: 0.9755 - val_loss: 0.3738 - val_accuracy: 0.9405                                                   
+Epoch 16/50                                                                                                          
+1547/1547 [==============================] - 38s 25ms/step - loss: 0.0827 - accuracy: 0.9763 - val_loss: 0.3747 - val_accuracy: 0.9402                                                    
+Epoch 17/50                                                                                                          
+1547/1547 [==============================] - 38s 25ms/step - loss: 0.0780 - accuracy: 0.9776 - val_loss: 0.3782 - val_accuracy: 0.9397                                                         
+Epoch 18/50                                                                                                          
+1547/1547 [==============================] - 38s 25ms/step - loss: 0.0739 - accuracy: 0.9787 - val_loss: 0.3754 - val_accuracy: 0.9407                                                      
+Epoch 19/50                                                                                                          
+1547/1547 [==============================] - 38s 25ms/step - loss: 0.0708 - accuracy: 0.9797 - val_loss: 0.3767 - val_accuracy: 0.9424                                                         
+Epoch 20/50                                                                                                          
+1547/1547 [==============================] - 38s 25ms/step - loss: 0.0691 - accuracy: 0.9801 - val_loss: 0.3749 - val_accuracy: 0.9417
+Epoch 21/50                                                                                                          
+1547/1547 [==============================] - 38s 25ms/step - loss: 0.0660 - accuracy: 0.9807 - val_loss: 0.3727 - val_accuracy: 0.9425                    
+Epoch 22/50                                                                                                          
+1547/1547 [==============================] - 38s 25ms/step - loss: 0.0648 - accuracy: 0.9813 - val_loss: 0.3647 - val_accuracy: 0.9431                                   
+Epoch 23/50                                                                                                          
+1547/1547 [==============================] - 38s 25ms/step - loss: 0.0614 - accuracy: 0.9819 - val_loss: 0.3696 - val_accuracy: 0.9429                                  
+Epoch 24/50                                                                                                          
+1547/1547 [==============================] - 38s 25ms/step - loss: 0.0599 - accuracy: 0.9826 - val_loss: 0.3726 - val_accuracy: 0.9429                                         
+Epoch 25/50                                                                                                          
+1547/1547 [==============================] - 38s 25ms/step - loss: 0.0566 - accuracy: 0.9833 - val_loss: 0.3744 - val_accuracy: 0.9430                          
+Epoch 26/50                                                                                                          
+1547/1547 [==============================] - 38s 25ms/step - loss: 0.0554 - accuracy: 0.9838 - val_loss: 0.3670 - val_accuracy: 0.9440                               
+Epoch 27/50                                                                                                          
+1547/1547 [==============================] - 38s 25ms/step - loss: 0.0526 - accuracy: 0.9844 - val_loss: 0.3702 - val_accuracy: 0.9428                           
+Epoch 28/50                                                                                                          
+1547/1547 [==============================] - 38s 25ms/step - loss: 0.0535 - accuracy: 0.9841 - val_loss: 0.3700 - val_accuracy: 0.9424                    
+Epoch 29/50                                                                                                          
+1547/1547 [==============================] - 38s 25ms/step - loss: 0.0506 - accuracy: 0.9851 - val_loss: 0.3595 - val_accuracy: 0.9442                  
+Epoch 30/50                                                                                                          
+1547/1547 [==============================] - 38s 25ms/step - loss: 0.0503 - accuracy: 0.9850 - val_loss: 0.3614 - val_accuracy: 0.9446                       
+Epoch 31/50                                                                                                          
+1547/1547 [==============================] - 38s 25ms/step - loss: 0.0493 - accuracy: 0.9855 - val_loss: 0.3700 - val_accuracy: 0.9429        
+Epoch 32/50                                                                                                          
+1547/1547 [==============================] - 38s 25ms/step - loss: 0.0479 - accuracy: 0.9858 - val_loss: 0.3652 - val_accuracy: 0.9443          
+Epoch 33/50                                                                                                          
+1547/1547 [==============================] - 38s 25ms/step - loss: 0.0468 - accuracy: 0.9862 - val_loss: 0.3598 - val_accuracy: 0.9449                   
+Epoch 34/50                                                                                                          
+1547/1547 [==============================] - 38s 25ms/step - loss: 0.0475 - accuracy: 0.9859 - val_loss: 0.3663 - val_accuracy: 0.9434                
+Epoch 35/50                                                                                                          
+1547/1547 [==============================] - 38s 25ms/step - loss: 0.0458 - accuracy: 0.9864 - val_loss: 0.3580 - val_accuracy: 0.9442
+Epoch 36/50                                                                                                          
+1547/1547 [==============================] - 38s 25ms/step - loss: 0.0436 - accuracy: 0.9871 - val_loss: 0.3669 - val_accuracy: 0.9446                                                  
+Epoch 37/50                                                                                                          
+1547/1547 [==============================] - 38s 25ms/step - loss: 0.0437 - accuracy: 0.9868 - val_loss: 0.3618 - val_accuracy: 0.9439                                      
+Epoch 38/50                                                                                                          
+1547/1547 [==============================] - 38s 25ms/step - loss: 0.0422 - accuracy: 0.9875 - val_loss: 0.3619 - val_accuracy: 0.9449                                    
+Epoch 39/50                                                                                                          
+1547/1547 [==============================] - 38s 25ms/step - loss: 0.0419 - accuracy: 0.9874 - val_loss: 0.3604 - val_accuracy: 0.9446                      
+Epoch 40/50                                                                                                          
+1547/1547 [==============================] - 38s 25ms/step - loss: 0.0417 - accuracy: 0.9875 - val_loss: 0.3599 - val_accuracy: 0.9449                     
+Epoch 41/50                                                                                                          
+1547/1547 [==============================] - 38s 25ms/step - loss: 0.0414 - accuracy: 0.9877 - val_loss: 0.3582 - val_accuracy: 0.9442          
+Epoch 42/50                                                                                                          
+1547/1547 [==============================] - 38s 25ms/step - loss: 0.0396 - accuracy: 0.9882 - val_loss: 0.3597 - val_accuracy: 0.9443                  
+Epoch 43/50                                                                                                          
+1547/1547 [==============================] - 38s 25ms/step - loss: 0.0384 - accuracy: 0.9882 - val_loss: 0.3602 - val_accuracy: 0.9450          
+Epoch 44/50                                                                                                          
+1547/1547 [==============================] - 38s 25ms/step - loss: 0.0383 - accuracy: 0.9887 - val_loss: 0.3574 - val_accuracy: 0.9457           
+Epoch 45/50                                                                                                          
+1547/1547 [==============================] - 38s 25ms/step - loss: 0.0387 - accuracy: 0.9884 - val_loss: 0.3568 - val_accuracy: 0.9448    
+Epoch 46/50                                                                                                          
+1547/1547 [==============================] - 38s 25ms/step - loss: 0.0376 - accuracy: 0.9888 - val_loss: 0.3506 - val_accuracy: 0.9458
+Epoch 47/50                                                                                                          
+1547/1547 [==============================] - 38s 25ms/step - loss: 0.0377 - accuracy: 0.9884 - val_loss: 0.3589 - val_accuracy: 0.9451
+Epoch 48/50                                                                                                          
+1547/1547 [==============================] - 38s 25ms/step - loss: 0.0368 - accuracy: 0.9889 - val_loss: 0.3522 - val_accuracy: 0.9463       
+Epoch 49/50                                                                                                          
+1547/1547 [==============================] - 38s 25ms/step - loss: 0.0360 - accuracy: 0.9890 - val_loss: 0.3614 - val_accuracy: 0.9443      
+Epoch 50/50                                                                                                          
+1547/1547 [==============================] - 38s 25ms/step - loss: 0.0355 - accuracy: 0.9892 - val_loss: 0.3524 - val_accuracy: 0.9460          
+Test loss: 0.34540489315986633                                                                                     
+Test accuracy: 0.9473400115966797                                                                                    
+695/695 [==============================] - 3s 5ms/step - loss: 0.3454 - accuracy: 0.9473                             
+Test loss: 0.3454049229621887                                                                                        
+Test accuracy: 0.9473400115966797                                                                                    
+
++---------------+--------+-----------+---------------+
+|     Model     | epochs | test loss | test accuracy |
++---------------+--------+-----------+---------------+
+| Deep CNN-LSTM |   50   |   0.3454  |     0.9473    |
++---------------+--------+-----------+---------------+
+
+Classification Report
+                precision    recall  f1-score   support
+        5809       0.00      0.00      0.00         1
+        5810       0.00      0.00      0.00         1
+        5811       1.00      1.00      1.00         1
+        5812       0.00      0.00      0.00         1
+        5813       1.00      1.00      1.00         1
+        5814       1.00      1.00      1.00         1
+        5815       0.00      0.00      0.00         1
+        5816       1.00      1.00      1.00         1
+        5817       1.00      1.00      1.00         1
+        5818       0.00      0.00      0.00         1
+        5819       1.00      1.00      1.00         1
+        5820       0.00      0.00      0.00         1
+        5821       1.00      1.00      1.00         1
+        5822       1.00      1.00      1.00         1
+        5823       0.00      0.00      0.00         1
+        5824       1.00      1.00      1.00         1
+        5825       0.00      0.00      0.00         1
+        5826       0.00      0.00      0.00         1
+        5827       0.00      0.00      0.00         1
+        5828       1.00      1.00      1.00         1
+        5829       1.00      1.00      1.00         1
+        5830       0.00      0.00      0.00         1
+        5831       0.00      0.00      0.00         1
+
+    accuracy                           0.95     22218
+   macro avg       0.92      0.91      0.91     22218
+weighted avg       0.95      0.95      0.94     22218
+
+
+Input Test Sequence:  HWLQMRDSMNTYNNMVNRCFATCIRSFQEKKVNAEEMDCTKRCVTKFVGYSQRVALRFAE
+100%|██████████| 1/1 [00:00<00:00, 33.57it/s]
+Predicted Protein Family for the inputted sequence:  ['PF02953.15']
+
+Input Test Sequence:  AFLFSGRREVMADACLQGMMGCVYGTAGGMDSAAAVLGDFCFLAGKPEERLIAWDYGRQYLLLAPPDAAWRELIKKVLGDRAREHTRYAIKKEGDCFDPGRLRTLAETLPAGITLSRIHGELYG
+100%|██████████| 1/1 [00:00<00:00, 10.01it/s]
+Predicted Protein Family for the inputted sequence:  ['PF12746.7']
+
+Input Test Sequence:  GAVRVDVSGGLGTDAMVVSSYLNTDKSLVTVIVNADNQDRDISLAISGGQPAGAVSVYETSAEHDLAPVRNAGADGRLAVKKQSIVTI
+100%|██████████| 1/1 [00:00<00:00, 19.72it/s]
+Predicted Protein Family for the inputted sequence:  ['PF13620.6']
+
+(dm_env) C:\Users\HP\Desktop\GS\data_mining>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
