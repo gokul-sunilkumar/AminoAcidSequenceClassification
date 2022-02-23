@@ -1,0 +1,7 @@
+./fasttext supervised -input ../fasttext_datasets/fast_sampled_train.txt -output ../fasttext_datasets/model2 -lr 0.5 -epoch 50 -wordNgrams 2 -bucket 200000 -dim 50 -loss hs
+
+ ./fasttext predict-prob ../fasttext_datasets/model.bin - -1 0.5
+
+./fasttext test ../fasttext_datasets/model2.bin  ../fasttext_datasets/fast_test.txt
+
+./fasttext supervised -input ../fasttext_datasets/fast_train.txt -output ../fasttext_datasets/model1 -autotune-validation ../fasttext_datasets/fast_cv.txt -loss hs -autotune-duration 3600
